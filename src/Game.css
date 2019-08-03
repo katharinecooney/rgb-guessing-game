@@ -1,0 +1,9 @@
+.Game {
+  max-width: 100vw;
+}
+
+.Game-squareContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
