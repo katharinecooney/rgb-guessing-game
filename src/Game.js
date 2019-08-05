@@ -53,10 +53,10 @@ class Game extends Component {
   checkForWin(clickedColor){
     console.log(clickedColor);
     if(clickedColor === this.state.color) {
-      console.log('YOU WIN!!!!')
-    } else {
-      console.log('try again!')
-    }
+      this.setState({
+        hasWon: true
+      })
+    } 
   }
 
   render() {
@@ -66,7 +66,15 @@ class Game extends Component {
           <h1 onClick={this.shuffle}>The {this.state.color} Guessing Game!</h1>
         </div>
         <div className="Game-squareContainer">
-          {this.state.squaresArray.map( (square, i) => <Square checkForWin={this.checkForWin} color={this.state.randomColors[i]} key={uuid()}/>)}
+          {this.state.squaresArray.map( (square, i) => 
+          <Square 
+            checkForWin={this.checkForWin} 
+            color={
+              this.state.hasWon === true ? 
+              this.state.color :
+              this.state.randomColors[i]} 
+            key={uuid()}
+          />)}
         </div>  
       </div>
     )
