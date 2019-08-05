@@ -62,7 +62,7 @@ class Game extends Component {
   render() {
     return (
       <div className="Game">
-        <div className="Game-title" style={{}}>
+        <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}>
           <h1 onClick={this.shuffle}>The {this.state.color} Guessing Game!</h1>
         </div>
         <div className="Game-squareContainer">
