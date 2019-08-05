@@ -1,6 +1,6 @@
 .Square {
   width: 200px;
   height: 200px;
-  /* background-color: pink; */
   margin: 15px;
+  border-radius: 20px;
 }

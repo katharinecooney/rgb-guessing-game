@@ -15,11 +15,13 @@ class Game extends Component {
     this.state = {
       color: randomColor,
       squaresArray: Array.from({length: numSquares}),
-      randomColors: []
+      randomColors: [],
+      hasWon: false
       
     }
     this.createRandomColor = this.createRandomColor.bind(this);
     this.shuffle = this.shuffle.bind(this);
+    this.checkForWin = this.checkForWin.bind(this);
   }
 
   componentDidMount(){
@@ -48,14 +50,23 @@ class Game extends Component {
     return randomColor;
   }
 
+  checkForWin(clickedColor){
+    console.log(clickedColor);
+    if(clickedColor === this.state.color) {
+      console.log('YOU WIN!!!!')
+    } else {
+      console.log('try again!')
+    }
+  }
+
   render() {
     return (
       <div className="Game">
-        <div className="Game-title">
+        <div className="Game-title" style={{}}>
           <h1 onClick={this.shuffle}>The {this.state.color} Guessing Game!</h1>
         </div>
         <div className="Game-squareContainer">
-          {this.state.squaresArray.map( (square, i) => <Square color={this.state.randomColors[i]} key={uuid()}/>)}
+          {this.state.squaresArray.map( (square, i) => <Square checkForWin={this.checkForWin} color={this.state.randomColors[i]} key={uuid()}/>)}
         </div>  
       </div>
     )
