@@ -16,12 +16,14 @@ class Game extends Component {
       color: randomColor,
       squaresArray: Array.from({length: numSquares}),
       randomColors: [],
-      hasWon: false
+      hasWon: false,
+      hi: 'hi'
       
     }
     this.createRandomColor = this.createRandomColor.bind(this);
     this.shuffle = this.shuffle.bind(this);
     this.checkForWin = this.checkForWin.bind(this);
+    this.setDifficulty = this.setDifficulty.bind(this);
   }
 
   componentDidMount(){
@@ -59,11 +61,19 @@ class Game extends Component {
     } 
   }
 
+  setDifficulty(num){
+    let numSquares = num;
+    this.setState({
+      squaresArray: Array.from({length: numSquares}),
+    })
+  }
+
   render() {
     return (
       <div className="Game">
         <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}>
           <h1 onClick={this.shuffle}>The {this.state.color} Guessing Game!</h1>
+          <button onClick={() => this.setDifficulty(3)}>easy</button>
         </div>
         <div className="Game-squareContainer">
           {this.state.squaresArray.map( (square, i) => 
