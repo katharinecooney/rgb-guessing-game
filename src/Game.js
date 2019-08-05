@@ -13,12 +13,10 @@ class Game extends Component {
   constructor(props){
     super(props);
     this.state = {
-      color: randomColor,
+      color: this.createRandomColor(),
       squaresArray: Array.from({length: numSquares}),
       randomColors: [],
-      hasWon: false,
-      hi: 'hi'
-      
+      hasWon: false
     }
     this.createRandomColor = this.createRandomColor.bind(this);
     this.shuffle = this.shuffle.bind(this);
@@ -62,17 +60,21 @@ class Game extends Component {
   }
 
   setDifficulty(num){
-    let numSquares = num;
+    numSquares = num;
     this.setState({
-      squaresArray: Array.from({length: numSquares}),
-    })
+      color: this.createRandomColor(),
+      randomColors: [],
+      hasWon: false,
+      squaresArray: Array.from({length: numSquares})
+    }, () => this.shuffle());
+    
   }
 
   render() {
     return (
       <div className="Game">
         <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}>
-          <h1 onClick={this.shuffle}>The {this.state.color} Guessing Game!</h1>
+          <h1>The {this.state.color} Guessing Game!</h1>
           <button onClick={() => this.setDifficulty(3)}>easy</button>
         </div>
         <div className="Game-squareContainer">
