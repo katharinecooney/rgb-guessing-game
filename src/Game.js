@@ -7,7 +7,7 @@ let red = Math.floor(Math.random() * 256);
 let green = Math.floor(Math.random() * 256);
 let blue = Math.floor(Math.random() * 256);
 let randomColor = `rgb(${red}, ${green}, ${blue})`
-let numSquares = 9;
+let numSquares = 6;
 
 class Game extends Component {
   constructor(props){
@@ -22,6 +22,7 @@ class Game extends Component {
     this.shuffle = this.shuffle.bind(this);
     this.checkForWin = this.checkForWin.bind(this);
     this.setDifficulty = this.setDifficulty.bind(this);
+    this.resetGame = this.resetGame.bind(this);
   }
 
   componentDidMount(){
@@ -67,7 +68,15 @@ class Game extends Component {
       hasWon: false,
       squaresArray: Array.from({length: numSquares})
     }, () => this.shuffle());
-    
+  }
+
+  resetGame(){
+    this.setState({
+      color: this.createRandomColor(),
+      randomColors: [],
+      hasWon: false,
+      squaresArray: Array.from({length: numSquares})
+    }, () => this.shuffle());
   }
 
   render() {
@@ -76,6 +85,9 @@ class Game extends Component {
         <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}>
           <h1>The {this.state.color} Guessing Game!</h1>
           <button onClick={() => this.setDifficulty(3)}>easy</button>
+          <button onClick={() => this.setDifficulty(6)}>medium</button>
+          <button onClick={() => this.setDifficulty(9)}>hard</button>
+          <button onClick={this.resetGame}>reset</button>
         </div>
         <div className="Game-squareContainer">
           {this.state.squaresArray.map( (square, i) => 
