@@ -7,7 +7,7 @@ let red = Math.floor(Math.random() * 256);
 let green = Math.floor(Math.random() * 256);
 let blue = Math.floor(Math.random() * 256);
 let randomColor = `rgb(${red}, ${green}, ${blue})`
-let numSquares = 6;
+let numSquares = 9;
 
 class Game extends Component {
   constructor(props){
@@ -68,6 +68,7 @@ class Game extends Component {
         <div className="Game-squareContainer">
           {this.state.squaresArray.map( (square, i) => 
           <Square 
+            hasWon={this.state.hasWon}
             checkForWin={this.checkForWin} 
             color={
               this.state.hasWon === true ? 
