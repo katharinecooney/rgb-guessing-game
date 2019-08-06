@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38e0aed1e09a320ae9580c1d3863e729",
+    "revision": "6d84d04a9603bafeec626562ff513922",
     "url": "/rgb-guessing-game/index.html"
   },
   {
-    "revision": "23d359e2b2634bbc8087",
+    "revision": "baa35933d0aec1dc416b",
     "url": "/rgb-guessing-game/static/css/main.68bbe2f6.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rgb-guessing-game/static/js/2.d8ac1a3a.chunk.js"
   },
   {
-    "revision": "23d359e2b2634bbc8087",
-    "url": "/rgb-guessing-game/static/js/main.2c729bee.chunk.js"
+    "revision": "baa35933d0aec1dc416b",
+    "url": "/rgb-guessing-game/static/js/main.1e4c5044.chunk.js"
   },
   {
     "revision": "a316798d466407294561",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/rgb-guessing-game/static/css/main.68bbe2f6.chunk.css",
-    "main.js": "/rgb-guessing-game/static/js/main.2c729bee.chunk.js",
-    "main.js.map": "/rgb-guessing-game/static/js/main.2c729bee.chunk.js.map",
+    "main.js": "/rgb-guessing-game/static/js/main.1e4c5044.chunk.js",
+    "main.js.map": "/rgb-guessing-game/static/js/main.1e4c5044.chunk.js.map",
     "runtime~main.js": "/rgb-guessing-game/static/js/runtime~main.ea478067.js",
     "runtime~main.js.map": "/rgb-guessing-game/static/js/runtime~main.ea478067.js.map",
     "static/js/2.d8ac1a3a.chunk.js": "/rgb-guessing-game/static/js/2.d8ac1a3a.chunk.js",
     "static/js/2.d8ac1a3a.chunk.js.map": "/rgb-guessing-game/static/js/2.d8ac1a3a.chunk.js.map",
     "index.html": "/rgb-guessing-game/index.html",
-    "precache-manifest.f605066160fb3a90fffa144573af4460.js": "/rgb-guessing-game/precache-manifest.f605066160fb3a90fffa144573af4460.js",
+    "precache-manifest.4f9a8b8a00bda7e5f227c66e6a984220.js": "/rgb-guessing-game/precache-manifest.4f9a8b8a00bda7e5f227c66e6a984220.js",
     "service-worker.js": "/rgb-guessing-game/service-worker.js",
     "static/css/main.68bbe2f6.chunk.css.map": "/rgb-guessing-game/static/css/main.68bbe2f6.chunk.css.map"
   }
