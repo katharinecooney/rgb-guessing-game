@@ -79,15 +79,29 @@ class Game extends Component {
     }, () => this.shuffle());
   }
 
+  // style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}
+
   render() {
     return (
       <div className="Game">
-        <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}>
-          <h1>The {this.state.color} Guessing Game!</h1>
-          <button onClick={() => this.setDifficulty(3)}>easy</button>
-          <button onClick={() => this.setDifficulty(6)}>medium</button>
-          <button onClick={() => this.setDifficulty(9)}>hard</button>
-          <button onClick={this.resetGame}>reset</button>
+        <div className="Game-title" >
+          <h1>
+            The <span>{this.state.color}</span> Guessing Game!
+          </h1>
+          <div className="Game-buttonContainer">
+            <div className="Game-resetButton">
+              <button onClick={this.resetGame}> 
+                {
+                  !this.state.hasWon ? 'RESET' : 'PLAY AGAIN'
+                }
+              </button>
+            </div>
+            <div className="Game-difficultyButtons">
+              <button onClick={() => this.setDifficulty(3)}>easy</button>
+              <button onClick={() => this.setDifficulty(6)}>medium</button>
+              <button onClick={() => this.setDifficulty(9)}>hard</button>
+            </div>
+          </div> 
         </div>
         <div className="Game-squareContainer">
           {this.state.squaresArray.map( (square, i) => 
