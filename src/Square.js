@@ -15,7 +15,7 @@ class Square extends Component {
   handleColorChange(){
     console.log('handle color change');
     !this.props.hasWon && this.setState({
-      currentColor: 'rgb(0, 0, 53)'
+      currentColor: 'rgb(16, 16, 34)'
     })
   }
 
