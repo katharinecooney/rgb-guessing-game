@@ -79,7 +79,7 @@ class Game extends Component {
     }, () => this.shuffle());
   }
 
-  // style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}
+  // <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}></div>
 
   render() {
     return (
@@ -89,18 +89,21 @@ class Game extends Component {
             The <span>{this.state.color}</span> Guessing Game!
           </h1>
           <div className="Game-buttonContainer">
-            <div className="Game-resetButton">
-              <button onClick={this.resetGame}> 
-                {
-                  !this.state.hasWon ? 'RESET' : 'PLAY AGAIN'
-                }
-              </button>
+            <div className="Game-buttonContainer-inner">
+              <div className="Game-resetButton">
+                <button onClick={this.resetGame}> 
+                  {
+                    !this.state.hasWon ? 'RESET' : 'PLAY AGAIN'
+                  }
+                </button>
+              </div>
+              <div className="Game-difficultyButtons">
+                <button onClick={() => this.setDifficulty(3)}>easy</button>
+                <button onClick={() => this.setDifficulty(6)}>medium</button>
+                <button onClick={() => this.setDifficulty(9)}>hard</button>
+              </div>
             </div>
-            <div className="Game-difficultyButtons">
-              <button onClick={() => this.setDifficulty(3)}>easy</button>
-              <button onClick={() => this.setDifficulty(6)}>medium</button>
-              <button onClick={() => this.setDifficulty(9)}>hard</button>
-            </div>
+            
           </div> 
         </div>
         <div className="Game-squareContainer">

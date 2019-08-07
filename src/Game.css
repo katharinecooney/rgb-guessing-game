@@ -5,8 +5,7 @@
 }
 
 .Game-title {
-  padding: 10px 0;
-  background-color: rgb(0, 255, 255);
+  background-color: rgba(189, 255, 246, 0.548);
   color: white;
   font-size: 1rem;
   letter-spacing: 5px;
@@ -15,18 +14,80 @@
 }
 
 .Game-title h1 {
+  padding: 10px 0;
   margin: 0;
 }
 
 .Game-title span {
   display: block;
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: 2px;
   line-height: 3rem;
+}
+
+.Game-buttonContainer {
+  display: flex;
+  background-color: white;
+  padding: 0 10px;
+  margin-top: 10px;
+  justify-content: center;
+  height: 50px;
+}
+
+.Game-buttonContainer-inner {
+  display: flex;
+  width: 95vw;
+  justify-content: space-between;
+}
+
+
+.Game-buttonContainer button {
+  height: 100%;
+  display: inline-block;
+  margin: 0 3px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
 }
 
 .Game-squareContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px 0;
+}
+
+@media (min-width: 450px) {
+  .Game-squareContainer {
+    padding: 20px 0 20px 0;
+  }
+  .Game-buttonContainer-inner {
+    width: 85vw;
+  }
+}
+
+@media (min-width: 600px) {
+  .Game-buttonContainer-inner {
+    max-width: 75vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .Game-buttonContainer-inner {
+    max-width: 65vw;
+  }
+}
+
+@media (min-width: 950px) {
+  .Game-buttonContainer-inner {
+    max-width: 55vw;
+  }
+}
+
+@media (min-width: 1110px) {
+  .Game-buttonContainer-inner {
+    max-width: 45vw;
+  }
 }
