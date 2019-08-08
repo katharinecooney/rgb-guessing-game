@@ -6,6 +6,7 @@ class Square extends Component {
     super(props);
     this.state = {
       currentColor: this.props.color,
+      isClicked: false
     }
     this.handleCheckForWin = this.handleCheckForWin.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
@@ -15,7 +16,8 @@ class Square extends Component {
   handleColorChange(){
     console.log('handle color change');
     !this.props.hasWon && this.setState({
-      currentColor: 'rgb(16, 16, 34)'
+      currentColor: 'rgb(16, 16, 34)',
+      isClicked: true
     })
   }
 
@@ -31,7 +33,7 @@ class Square extends Component {
 
   render() {
     return (
-      <div onClick={this.handleClick}  className="Square" style={{backgroundColor: this.state.currentColor}}>
+      <div onClick={this.handleClick}  className={this.state.isClicked ? "Square Square-disappear" : "Square"} style={{backgroundColor: this.state.currentColor}}>
       </div>
     )
   }

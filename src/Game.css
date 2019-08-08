@@ -5,22 +5,23 @@
 }
 
 .Game-title {
-  background-color: rgba(189, 255, 246, 0.548);
-  color: white;
-  font-size: 1rem;
+  background-color: rgba(6, 253, 220, 0.836);
+  color: rgb(255, 255, 255);
   letter-spacing: 5px;
   text-transform: uppercase;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .Game-title h1 {
   padding: 10px 0;
   margin: 0;
+  font-weight: 500;
+  font-size: 1.15rem;
 }
 
 .Game-title span {
   display: block;
-  font-size: 2rem;
+  font-size: 1.85rem;
   letter-spacing: 2px;
   line-height: 3rem;
 }
@@ -29,27 +30,33 @@
   display: flex;
   background-color: white;
   padding: 0 10px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   justify-content: center;
-  height: 50px;
+  height: 45px;
 }
 
 .Game-buttonContainer-inner {
   display: flex;
   width: 95vw;
+  align-items: center;
   justify-content: space-between;
 }
 
-
 .Game-buttonContainer button {
-  height: 100%;
+  height: 35px;
   display: inline-block;
   margin: 0 3px;
   text-transform: uppercase;
-  border: none;
+  border: 3px solid transparent;
   outline: none;
-  font-size: 1rem;
+  font-size: .7rem;
+  font-weight: 600;
+  color: rgb(56, 56, 92);
   background-color: transparent;
+}
+
+.Game-buttonContainer button.active {
+  border-bottom: 3px solid rgba(6, 253, 220, 0.836);
 }
 
 .Game-squareContainer {
@@ -59,6 +66,21 @@
   padding: 10px 0;
 }
 
+@media (min-width: 350px) {
+  .Game-title h1 {
+    font-size: 1.25rem;
+  }
+  
+  .Game-title span {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+  .Game-buttonContainer button {
+    font-size: .8rem;
+  }
+}
+
+
 @media (min-width: 450px) {
   .Game-squareContainer {
     padding: 20px 0 20px 0;
@@ -66,15 +88,43 @@
   .Game-buttonContainer-inner {
     width: 85vw;
   }
+  .Game-buttonContainer button {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 600px) {
+  .Game-title h1 {
+    font-size: 1.75rem;
+  }
+  
+  .Game-title span {
+    font-size: 2.75rem;
+    line-height: 3.75rem;
+  }
+
   .Game-buttonContainer-inner {
     max-width: 75vw;
+  }
+  .Game-buttonContainer button {
+    font-size: 1.25rem;
+    height: 40px;
+    margin: 0 5px;
+  }
+  .Game-buttonContainer {
+    height: 50px;
   }
 }
 
 @media (min-width: 800px) {
+  .Game-title h1 {
+    font-size: 2rem;
+  }
+  
+  .Game-title span {
+    font-size: 3rem;
+    line-height: 4rem;
+  }
   .Game-buttonContainer-inner {
     max-width: 65vw;
   }
@@ -82,12 +132,29 @@
 
 @media (min-width: 950px) {
   .Game-buttonContainer-inner {
-    max-width: 55vw;
+    max-width: 60vw;
+  }
+  .Game-buttonContainer button {
+    font-size: 1.5rem;
+    height: 45px;
+    margin: 0 7px;
+  }
+  
+  .Game-buttonContainer {
+    height: 55px;
   }
 }
 
 @media (min-width: 1110px) {
+  .Game-title h1 {
+    font-size: 2.25rem;
+  }
+  
+  .Game-title span {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
   .Game-buttonContainer-inner {
-    max-width: 45vw;
+    max-width: 50vw;
   }
 }

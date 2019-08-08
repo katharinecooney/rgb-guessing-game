@@ -3,10 +3,6 @@ import Square from './Square';
 import uuid from 'uuid';
 import './Game.css';
 
-let red = Math.floor(Math.random() * 256);
-let green = Math.floor(Math.random() * 256);
-let blue = Math.floor(Math.random() * 256);
-let randomColor = `rgb(${red}, ${green}, ${blue})`
 let numSquares = 6;
 
 class Game extends Component {
@@ -16,7 +12,8 @@ class Game extends Component {
       color: this.createRandomColor(),
       squaresArray: Array.from({length: numSquares}),
       randomColors: [],
-      hasWon: false
+      hasWon: false,
+      squaresDisplayed: numSquares
     }
     this.createRandomColor = this.createRandomColor.bind(this);
     this.shuffle = this.shuffle.bind(this);
@@ -66,6 +63,7 @@ class Game extends Component {
       color: this.createRandomColor(),
       randomColors: [],
       hasWon: false,
+      squaresDisplayed: numSquares,
       squaresArray: Array.from({length: numSquares})
     }, () => this.shuffle());
   }
@@ -79,12 +77,10 @@ class Game extends Component {
     }, () => this.shuffle());
   }
 
-  // <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgb(6, 173, 179)'}}></div>
-
   render() {
     return (
       <div className="Game">
-        <div className="Game-title" >
+        <div className="Game-title" style={{backgroundColor: this.state.hasWon ? this.state.color : 'rgba(6, 253, 220, 0.836)'}} >
           <h1>
             The <span>{this.state.color}</span> Guessing Game!
           </h1>
@@ -93,14 +89,14 @@ class Game extends Component {
               <div className="Game-resetButton">
                 <button onClick={this.resetGame}> 
                   {
-                    !this.state.hasWon ? 'RESET' : 'PLAY AGAIN'
+                    !this.state.hasWon ? 'RESET' : 'PLAY AGAIN?'
                   }
                 </button>
               </div>
               <div className="Game-difficultyButtons">
-                <button onClick={() => this.setDifficulty(3)}>easy</button>
-                <button onClick={() => this.setDifficulty(6)}>medium</button>
-                <button onClick={() => this.setDifficulty(9)}>hard</button>
+                <button  onClick={() => this.setDifficulty(3)} className={this.state.squaresDisplayed === 3 ? 'active' : ''}>Easy</button>
+                <button onClick={() => this.setDifficulty(6)} className={this.state.squaresDisplayed === 6 ? 'active' : ''}>Medium</button>
+                <button onClick={() => this.setDifficulty(9)} className={this.state.squaresDisplayed === 9 ? 'active' : ''}>Hard</button>
               </div>
             </div>
             
