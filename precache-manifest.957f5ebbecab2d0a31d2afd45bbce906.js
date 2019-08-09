@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4a0d9869c42d7055f3e722b8451fe17b",
+    "revision": "1feba3e2fb8b3e57e74852a03241d007",
     "url": "/rgb-guessing-game/index.html"
   },
   {
